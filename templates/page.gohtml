@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Goblog page - {{.Title}}</title>
+     <style>
+      :root {
+        --bg-dark-color: #000;
+        --text-dark-color: #fff;
+        --text-dark-subtext-color: #8a8a8a; 
+        --text-highlight: #f895ea;
+        --seperator: rgba(218, 107, 203, 0.5);
+        --bg-light-color: #fff;
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      * {
+        font-family: Pretendard, apple-system, system-ui, "Helvetica", "Arial", sans-serif;
+      }
+
+      .nav {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        color: var(--text-highlight);
+      }
+
+      body {
+        margin: 0;
+        padding: 0 1rem 0rem 1rem;
+        min-height: 100vh;
+        color: var(--text-dark-color);
+        background-color: var(--bg-dark-color);
+        flex: 1;
+        width: 100%;
+        max-width: 75ch;
+      }
+
+      .main {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      .main div, footer {
+        flex: 1;
+        width: 100%;
+        max-width: 75ch;
+        text-align: center;
+      }
+
+      .main footer {
+        height: 100%;
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        justify-content: center;
+        color: var(--text-dark-subtext-color);
+      }
+
+      a, .text-highlight {
+        color: var(--text-highlight);
+        text-decoration: none;
+      }
+
+      .text-normal {
+        color: var(--text-dark-color);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+        <a href="/">home</a>
+        <a href="/blog">blog</a>
+        <a href="/contact">contact</a>
+      </ul>
+    </nav>
+    <div class="main">
+      {{.Body}}
+    </div>
+    <footer>
+      <p>&copy; Your Site Name</p>
+    </footer>
+  </body>
+</html>
